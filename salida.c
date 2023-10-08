@@ -26,18 +26,18 @@ void escribir_archivo(char *nombre_archivo, double *arreglo_posiciones, int N, i
 
 void salida_consola(int N, char *input_file, char *output_file, int show, Celda *arreglo_ataque, double *arreglo_posiciones, double max)
 {
-    // Entrada de getopt
-    printf("N: %d\n", N);
-    printf("Input file: %s\n", input_file);
-    printf("Output file: %s\n", output_file);
-    printf("Show: %d\n", show);
+    // // Entrada de getopt
+    // printf("N: %d\n", N);
+    // printf("Input file: %s\n", input_file);
+    // printf("Output file: %s\n", output_file);
+    // printf("Show: %d\n", show);
 
-    printf("Se imprime el arreglo de celdas\n");
-    // Se imprime el arreglo de Celdas
-    for (int i = 0; i < arreglo_ataque[0].largo_del_arreglo; i++)
-    {
-        printf("Posición: %d, Valor: %d\n", arreglo_ataque[i].posicion, arreglo_ataque[i].valor);
-    }
+    // printf("Se imprime el arreglo de celdas\n");
+    // // Se imprime el arreglo de Celdas
+    // for (int i = 0; i < arreglo_ataque[0].largo_del_arreglo; i++)
+    // {
+    //     printf("Posición: %d, Valor: %d\n", arreglo_ataque[i].posicion, arreglo_ataque[i].valor);
+    // }
 
     printf("Se imprime el arreglo de posiciones\n");
     // Se imprime arreglo de posiciones con su grafico
