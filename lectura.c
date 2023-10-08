@@ -1,9 +1,12 @@
-#include "lectura.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "celda.h"
 
-// Esta función tiene el propósito de leer el archivo de entrada y retornar un array de celdas
+// Entrada: nombre del archivo siendo un char.
+// Salida: arreglo de celdas (estructura).
+// Descripción: Esta función tiene el propósito de leer el archivo de entrada
+// y retornar un array de celdas.
 Celda *leer_archivo(char *nombre_archivo)
 {
     // Se inicializan las variables
@@ -19,9 +22,9 @@ Celda *leer_archivo(char *nombre_archivo)
     // Se lee la primera linea
     char linea[100];
     int tamaño_array = atoi(fgets(linea, 100, archivo));
-    if (tamaño_array == 0)
+    if (tamaño_array <= 0)
     {
-        printf("Error: Archivo vacío\n");
+        printf("Error: Archivo vacío o No Cumple con el Formato Pedido\n");
         exit(1);
     }
     // Se crea un array de array de caracteres con el tamaño de la primera linea
@@ -34,6 +37,11 @@ Celda *leer_archivo(char *nombre_archivo)
     int segundo_numero;
     while (fscanf(archivo, "%d %d", &primer_numero, &segundo_numero) != EOF)
     {
+        if (primer_numero < 0 || segundo_numero <= 0)
+        {
+            printf("Error: No Cumple con el Formato Pedido\n");
+            exit(1);
+        }
         arreglo[i].posicion = primer_numero;
         arreglo[i].valor = segundo_numero;
         arreglo[i].largo_del_arreglo = tamaño_array;

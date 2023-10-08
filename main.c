@@ -4,6 +4,7 @@
 #include "lectura.h"
 #include "funciones.h"
 #include "salida.h"
+#include "celda.h"
 
 int main(int argc, char *argv[])
 {
@@ -28,7 +29,7 @@ int main(int argc, char *argv[])
             if (N < 0)
             {
                 printf("Error: N debe ser mayor a 0\n");
-                return 1;
+                exit(1);
             }
             break;
         case 'i':
@@ -50,10 +51,15 @@ int main(int argc, char *argv[])
             break;
         }
     }
+    if (N == 0)
+    {
+        printf("Error: No se ingresó el número de celdas\n");
+        exit(1);
+    }
 
     // Se lee el archivo de entrada y se crea un arreglo con las posiciones.
     Celda *arreglo_ataque = leer_archivo(input_file);
-    double *arreglo_posiciones = (double *)calloc(N, sizeof(double) * N) ;
+    double *arreglo_posiciones = (double *)malloc(sizeof(double) * N);
     if (arreglo_posiciones == NULL)
     {
         printf("Error: No se pudo crear el arreglo de posiciones\n");
@@ -90,10 +96,6 @@ int main(int argc, char *argv[])
     escribir_archivo(output_file, arreglo_posiciones, N, posicion_max, max);
 
     // Se muestra el arreglo por consola
-    if (show == 0)
-    {
-        return 0;
-    }
     salida_consola(N, input_file, output_file, show, arreglo_ataque, arreglo_posiciones, max);
 
     return 0;

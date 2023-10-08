@@ -1,9 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "salida.h"
-#include "lectura.h"
+#include "celda.h"
 #include "funciones.h"
 
+// Entrada: nombre del archivo siendo un char, arreglo de posiciones siendo un double,
+// largo del arreglo siendo un int, posicion maxima siendo un int y el maximo siendo un double.
+// Salida: No tiene.
+// Descripción: Esta función tiene el propósito de crear un archivo de salida con el nombre y
+// el contenido que se le entrega en el arreglo de posiciones.
 void escribir_archivo(char *nombre_archivo, double *arreglo_posiciones, int N, int posicion_max, double max)
 {
     // funcion para crear un archivo
@@ -24,20 +29,17 @@ void escribir_archivo(char *nombre_archivo, double *arreglo_posiciones, int N, i
     }
 }
 
+// Entrada: N siendo de tipo int, input_file siendo un char, output_file siendo un char, show
+// siendo un int, arreglo_ataque siendo un arreglo de celdas, arreglo_posiciones siendo un arreglo
+// de doubles y max siendo un double.
+// Salida: No tiene.
+// Descripción: Esta función tiene el propósito de imprimir en consola el arreglo de posiciones.
 void salida_consola(int N, char *input_file, char *output_file, int show, Celda *arreglo_ataque, double *arreglo_posiciones, double max)
 {
-    // // Entrada de getopt
-    // printf("N: %d\n", N);
-    // printf("Input file: %s\n", input_file);
-    // printf("Output file: %s\n", output_file);
-    // printf("Show: %d\n", show);
-
-    // printf("Se imprime el arreglo de celdas\n");
-    // // Se imprime el arreglo de Celdas
-    // for (int i = 0; i < arreglo_ataque[0].largo_del_arreglo; i++)
-    // {
-    //     printf("Posición: %d, Valor: %d\n", arreglo_ataque[i].posicion, arreglo_ataque[i].valor);
-    // }
+    if (show == 0)
+    {
+        return;
+    }
 
     printf("Se imprime el arreglo de posiciones\n");
     // Se imprime arreglo de posiciones con su grafico
