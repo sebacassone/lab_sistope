@@ -30,12 +30,13 @@ Celda *leer_archivo(char *nombre_archivo)
     // Luego se comienza a leer linea por linea separando las lineas por " " y se guarda en el array de celdas
     // Leeme el archivo linea por linea
     int i = 0;
-    while (fscanf(archivo, "%c %c", linea) != EOF)
+    int primer_numero;
+    int segundo_numero;
+    while (fscanf(archivo, "%d %d", &primer_numero, &segundo_numero) != EOF)
     {
-        // Ahora se separa linea por " " y lo guarda en el array de celdas
-        char *token = strtok(linea, " ");
-        arreglo[i].posicion = atoi(token);
-        arreglo[i].valor = atoi(strtok(NULL, " "));
+        arreglo[i].posicion = primer_numero;
+        arreglo[i].valor = segundo_numero;
+        arreglo[i].largo_del_arreglo = tamaño_array;
         i++;
     }
     return arreglo;
