@@ -10,4 +10,8 @@ float suma_formula(int posicion_particula, int energia_particula, int posicion_a
 
 
 
+//Entradas: float energia_maxima, float energia_material
+//Salida: int porcentaje de o
+//Funcionamiento: Calcula la cantidad de "o" que deberia imprimir considerando como 100% la energia maxima y la energia del material como el porcentaje de "o" que se debe imprimir
+
 int o_proporcional(float energia_maxima, float energia_material);

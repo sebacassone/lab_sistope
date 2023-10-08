@@ -4,16 +4,16 @@
 
 
 float suma_formula(int posicion_particula, int energia_particula, int posicion_arreglo, float energia_arreglo ,int largo_arreglo){
-    float energia_particual_float = (float)energia_particula;
-    float residuo_energia = (10e-3 * energia_particual_float)/ (largo_arreglo * sqrt(abs(posicion_particula - posicion_arreglo) + 1));
-    float min = ((10e-3)/largo_arreglo);
+    float energia_particual_float = (float)energia_particula; //se transforma la energia de la particula a float
+    float residuo_energia = (10e-3 * energia_particual_float)/ (largo_arreglo * sqrt(abs(posicion_particula - posicion_arreglo) + 1)); //se aplica la formula entregada en enunciado
+    float min_energy = ((10e-3)/largo_arreglo); //se calcula el umbral minimo de energia
 
-    if (residuo_energia  >= min){
+    if (residuo_energia  >= min_energy){ // si el residuo de energia es mayor al minimo, se le suma a la energia ya existente del material
         return energia_arreglo + residuo_energia;
     }
     else
     {
-        return energia_arreglo;
+        return energia_arreglo; //si no, se devuelve la energia del material
     }
     
    
