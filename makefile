@@ -1,7 +1,10 @@
 FLAGS = -Wall -lm
+TARGET = programa
+SRCS = main.c lectura.c
+OBJS = $(SRCS:.c=.o)
 
-main: main.c
-	gcc $(FLAGS) -o main main.c
+$(TARGET): $(OBJS)
+	gcc $(FLAGS) -o $(TARGET) $(OBJS)
 
 clear:
-	rm -f ejemplo *.o
+	rm -f $(OBJS) $(TARGET)
