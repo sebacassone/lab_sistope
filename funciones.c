@@ -5,11 +5,11 @@
 
 float suma_formula(int posicion_particula, int energia_particula, int posicion_arreglo, float energia_arreglo, int largo_arreglo)
 {
-    float energia_particual_float = (float)energia_particula;
+    float energia_particula_float = (float)energia_particula;
 
-    float raiz = abs(posicion_particula - posicion_arreglo) + 1;                              // se transforma la energia de la particula a float
-    float residuo_energia = (10e3 * energia_particual_float) / (largo_arreglo * sqrt(raiz)); // se aplica la formula entregada en enunciado
-    float min_energy = ((10e-3) / largo_arreglo);                                            // se calcula el umbral minimo de energia
+    float raiz = sqrtf(abs(posicion_particula - posicion_arreglo) + 1);                              // se transforma la energia de la particula a float
+    float residuo_energia = ((1000* energia_particula_float) / (largo_arreglo * raiz)); // se aplica la formula entregada en enunciado
+    float min_energy = (pow(10,-3) / largo_arreglo);                                            // se calcula el umbral minimo de energia
 
     if (residuo_energia >= min_energy)
     { // si el residuo de energia es mayor al minimo, se le suma a la energia ya existente del material
