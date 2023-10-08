@@ -7,7 +7,7 @@ float suma_formula(int posicion_particula, int energia_particula, int posicion_a
 {
     float energia_particual_float = (float)energia_particula;
 
-    float raiz = abs(posicion_particula - posicion_arreglo) + 1;                              // se transforma la energia de la particula a float
+    float raiz = abs(posicion_particula - posicion_arreglo) + 1;                             // se transforma la energia de la particula a float
     float residuo_energia = (10e3 * energia_particual_float) / (largo_arreglo * sqrt(raiz)); // se aplica la formula entregada en enunciado
     float min_energy = ((10e-3) / largo_arreglo);                                            // se calcula el umbral minimo de energia
 

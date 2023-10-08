@@ -1,6 +1,6 @@
 FLAGS = -Wall
 TARGET = programa
-SRCS = main.c lectura.c funciones.c
+SRCS = main.c lectura.c funciones.c salida.c
 POSTFLAGS = -lm
 OBJS = $(SRCS:.c=.o)
 
