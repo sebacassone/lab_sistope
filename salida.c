@@ -4,7 +4,7 @@
 #include "lectura.h"
 #include "funciones.h"
 
-void escribir_archivo(char *nombre_archivo, float *arreglo_posiciones, int N, int posicion_max, float max)
+void escribir_archivo(char *nombre_archivo, double *arreglo_posiciones, int N, int posicion_max, double max)
 {
     // funcion para crear un archivo
 
@@ -24,7 +24,7 @@ void escribir_archivo(char *nombre_archivo, float *arreglo_posiciones, int N, in
     }
 }
 
-void salida_consola(int N, char *input_file, char *output_file, int show, Celda *arreglo_ataque, float *arreglo_posiciones, float max)
+void salida_consola(int N, char *input_file, char *output_file, int show, Celda *arreglo_ataque, double *arreglo_posiciones, double max)
 {
     // Entrada de getopt
     printf("N: %d\n", N);

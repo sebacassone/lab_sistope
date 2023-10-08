@@ -3,13 +3,15 @@
 #include <math.h>
 #include <stdlib.h>
 
-float suma_formula(int posicion_particula, int energia_particula, int posicion_arreglo, float energia_arreglo, int largo_arreglo)
+double suma_formula(int posicion_particula, int energia_particula, int posicion_arreglo, double energia_arreglo, int largo_arreglo)
 {
-    float energia_particula_float = (float)energia_particula;
+    double energia_particula_float = (double)energia_particula;
+    double largo_arreglo_float = (double)largo_arreglo;
 
-    float raiz = sqrtf(abs(posicion_particula - posicion_arreglo) + 1);                              // se transforma la energia de la particula a float
-    float residuo_energia = ((1000* energia_particula_float) / (largo_arreglo * raiz)); // se aplica la formula entregada en enunciado
-    float min_energy = (pow(10,-3) / largo_arreglo);                                            // se calcula el umbral minimo de energia
+    double raiz = sqrt(abs(posicion_particula - posicion_arreglo) + 1);                              // se transforma la energia de la particula a float
+    
+    double residuo_energia = ((1000* energia_particula_float) / (largo_arreglo_float * raiz)); // se aplica la formula entregada en enunciado
+    double min_energy = (pow(10,-3) / largo_arreglo);                                            // se calcula el umbral minimo de energia
 
     if (residuo_energia >= min_energy)
     { // si el residuo de energia es mayor al minimo, se le suma a la energia ya existente del material
@@ -21,8 +23,8 @@ float suma_formula(int posicion_particula, int energia_particula, int posicion_a
     }
 }
 
-int o_proporcional(float energia_maxima, float energia_material)
+int o_proporcional(double energia_maxima, double energia_material)
 {
-    float porcentaje_o = ((energia_material * 100) / energia_maxima);
+    double porcentaje_o = ((energia_material * 100) / energia_maxima);
     return (int)porcentaje_o;
 }

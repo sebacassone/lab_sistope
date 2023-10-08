@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
 
     // Se lee el archivo de entrada y se crea un arreglo con las posiciones.
     Celda *arreglo_ataque = leer_archivo(input_file);
-    float *arreglo_posiciones = (float *)malloc(sizeof(float) * N);
+    double *arreglo_posiciones = (double *)calloc(N, sizeof(double) * N) ;
     if (arreglo_posiciones == NULL)
     {
         printf("Error: No se pudo crear el arreglo de posiciones\n");
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
         }
     }
     // Encuentra el valor maximo del arreglo_posiciones
-    float max = 0;
+    double max = 0;
     int posicion_max = 0;
     for (int i = 0; i < N; i++)
     {
