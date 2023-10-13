@@ -21,7 +21,7 @@ void escribir_archivo(char *nombre_archivo, double *arreglo_posiciones, int N, i
     }
 
     // Se imrpime el material com mas energia
-    fprintf(archivo, "El material con más energía es el material %d : %f \n", posicion_max, max);
+    fprintf(archivo, "%d : %f \n", posicion_max, max);
     // Se imprime el arreglo de posiciones en el archivo de salida
     for (int i = 0; i < N; i++)
     {
@@ -41,11 +41,11 @@ void salida_consola(int N, char *input_file, char *output_file, int show, Celda 
         return;
     }
 
-    printf("Se imprime el arreglo de posiciones\n");
+   
     // Se imprime arreglo de posiciones con su grafico
     for (int i = 0; i < N; i++)
     {
-        printf("Posición: %d, Valor: %f | ", i, arreglo_posiciones[i]);
+        printf("%d  %f | ", i, arreglo_posiciones[i]);
 
         for (int t = 0; t < o_proporcional(max, arreglo_posiciones[i]); t++)
         {

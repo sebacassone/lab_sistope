@@ -1,5 +1,5 @@
 FLAGS = -Wall
-TARGET = programa
+TARGET = lab1
 SRCS = lab1.c lectura.c funciones.c salida.c
 POSTFLAGS = -lm
 OBJS = $(SRCS:.c=.o)
